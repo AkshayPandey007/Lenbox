@@ -16,6 +16,7 @@
 <script setup>
 
 
+
 </script>
 
 
@@ -33,7 +34,7 @@
 
 
 #eachBox{
-    width: 370px;
+    width: 335px;
    height: 300px;
    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 20px;
@@ -102,7 +103,7 @@ h2 , h3, p{
 
 
     #eachBox{
-        width: 350px;
+        width: 315px;
        height: 300px;
        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         border-radius: 20px;

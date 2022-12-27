@@ -3,23 +3,25 @@
 
       <div id="userPostBox">
         <div>
-      <h2 id="userPost">USER POST</h2>
+      <h2 id="userPost">POST COMMENTS</h2>
         </div>
-        <div>
+        <!-- <div>
       <button id="btn" @click="goBack()">GO BACK</button>
-        </div>
+        </div> -->
     </div>
 
         <div  id="detailEachBox">
-          <ol>
+        
             <section v-if="Loading">
               <div id="LoadingBox">
               <img src="https://media3.giphy.com/media/52qtwCtj9OLTi/giphy.gif?cid=ecf05e479bjw2zxt4i8jqs2go7yud3pd2g65dtfv8kn7krqc&rid=giphy.gif&ct=g" alt="" id="LoadingGif"
               >
             </div>
               </section>
-            <li v-for="element in post" @click="Comment(element.id)" id="list">{{ element.body }}</li>
-          </ol>
+              <div v-for="element in post">
+            <p >{{ element.body }}  <span id="email"> : {{ element.email  }}</span></p>
+           
+        </div>
         </div>
     </div>
 </template>
@@ -46,16 +48,13 @@ export default {
   },
  methods:
  {
-  goBack:function(){
-    this.$router.push('/')
-  },
-  Comment:function(id)
-  {
-    this.$router.push(`/postDetails/${id}`)
-  }
+//   goBack:function(){
+//     this.$router.push(`/posts/${ this.$route.params.id}`)
+    // console.log(this.$route)
+//   }
 },
   created:function() {
-       axios.get(`https://jsonplaceholder.typicode.com/posts/?userId=${ this.$route.params.id}`)
+       axios.get(`https://jsonplaceholder.typicode.com/comments/?postId=${ this.$route.params.id}`)
       .then((res) => {
         console.log(res.data)
         this.post = res.data;
@@ -127,22 +126,14 @@ export default {
     padding: 15px;
     text-align: left;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 30px;
     flex-wrap: wrap;
     border: 3.5px solid #41B883;
+    margin-top: 100px;
 }
 
 
-
-li{
-    
-    margin-top: 10px;
-    font-size: 18px;
-    padding: 20px;
-}
-
-li:hover{
-  cursor: pointer;
-  
+#email{
+  color: #41B883;
 }
 </style>

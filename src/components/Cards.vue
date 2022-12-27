@@ -3,8 +3,8 @@
     <div id="userCardBox">
     <h1 id="userCard">USER CARDS</h1>
     </div>
-    <section v-if="Loading">
-    <Loading/>
+    <section >
+    <Loading v-if="Loading"/>
    </section>
     <div id="MainBox">
         <div v-for="element in post" id="eachBox" @click="showProducts(element.id)">
@@ -14,7 +14,7 @@
           <h3>Phone : {{ element.phone }}</h3>
           <p>Company : <span id="address">{{ element.company.name }}</span></p>
           <p>Address : <span id="address">{{ element.address.city }}</span></p>
-          <!-- <button @click="ShowComments()" id="CommentBtn">COMMENTS</button> -->
+        
       </div>
     </div>
 
@@ -38,7 +38,7 @@ export default {
   data() {
     return {
       post: null,
-      Loading : true,
+      Loading : true
     };
   },
  methods:
@@ -53,7 +53,6 @@ export default {
       .then((res) => {
         console.log(res.data)
         this.post = res.data;
-        console.log(res.data.length)
         this.Loading = false
     })
 }
@@ -99,6 +98,7 @@ export default {
     width: 85%;
     margin: auto;
     margin-top: 100px;
+   
 }
 
 
