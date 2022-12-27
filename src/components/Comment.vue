@@ -5,9 +5,9 @@
         <div>
       <h2 id="userPost">POST COMMENTS</h2>
         </div>
-        <!-- <div>
+        <div>
       <button id="btn" @click="goBack()">GO BACK</button>
-        </div> -->
+        </div>
     </div>
 
         <div  id="detailEachBox">
@@ -43,20 +43,20 @@ export default {
     return {
         id: this.$route.params.id,
       post: null,
-      Loading:true
+      Loading:true,
+      pass:null
     };
   },
  methods:
  {
-//   goBack:function(){
-//     this.$router.push(`/posts/${ this.$route.params.id}`)
-    // console.log(this.$route)
-//   }
+  goBack:function(id){
+    this.$router.push(`/`)
+  }
 },
   created:function() {
        axios.get(`https://jsonplaceholder.typicode.com/comments/?postId=${ this.$route.params.id}`)
       .then((res) => {
-        console.log(res.data)
+        // console.log(res.data)
         this.post = res.data;
         this.Loading=false
     })
@@ -86,7 +86,7 @@ export default {
 
 #btn{
   margin-top: 35px;
-  background-color: blueviolet;
+  background-color: #41B883;
   color: white;
   font-weight: 500;
   border-radius: 15px;

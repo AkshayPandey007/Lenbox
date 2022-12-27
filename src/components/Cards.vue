@@ -44,14 +44,14 @@ export default {
  methods:
  {
    showProducts: function(id) {
-    console.log(id)
+    // console.log(id)
     this.$router.push(`posts/${id}`)
    }
 },
- created:   function() {
+ created: function() {
        axios.get("https://jsonplaceholder.typicode.com/users")
       .then((res) => {
-        console.log(res.data)
+        // console.log(res.data)
         this.post = res.data;
         this.Loading = false
     })
@@ -128,7 +128,7 @@ export default {
 
 
 #CommentBtn{
-    background-color: blueviolet;
+    background-color: #41B883;
     border: none;
     border-radius: 15px;
     padding: 7px 15px;

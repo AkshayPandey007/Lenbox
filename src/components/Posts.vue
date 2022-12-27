@@ -87,7 +87,7 @@ export default {
 
 #btn{
   margin-top: 35px;
-  background-color: blueviolet;
+  background-color: #41B883;
   color: white;
   font-weight: 500;
   border-radius: 15px;

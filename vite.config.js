@@ -6,13 +6,12 @@ import vue from '@vitejs/plugin-vue'
 // https://vitejs.dev/config/
 import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
-  plugins: [vue()],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  plugins: [
+  plugins: [vue(),
     VitePWA({ registerType: 'autoUpdate',
     injectRegister: 'auto',
     includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
